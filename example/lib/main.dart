@@ -20,17 +20,18 @@ class _MyAppState extends State<MyApp> {
   final ciConnectivity = CiConnectivity();
   String textt = "";
 
+
   @override
   void initState() {
     super.initState();
 
-    // ciConnectivity.loopVerifyStatus();
-    // ciConnectivity.onListenerStatusNetwork.listen((event) {
-    //   print(event);
-    //   setState(() {
-    //     textt = event.toString();
-    //   });
-    // });
+    ciConnectivity.loopVerifyStatus();
+    ciConnectivity.onListenerStatusNetwork.listen((event) {
+      print(event);
+      setState(() {
+        textt = event.toString();
+      });
+    });
   }
 
   @override

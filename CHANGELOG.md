@@ -1,3 +1,4 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+*  Network connection check.
+*  Widget helpers to ui check connectivity.
