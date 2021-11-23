@@ -1,7 +1,7 @@
 name: ci_connectivity
 description: Plugin to checker data connection network.
 version: 1.0.0
-homepage:
+homepage: https://github.com/firmino2611/ci_connectivity
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
