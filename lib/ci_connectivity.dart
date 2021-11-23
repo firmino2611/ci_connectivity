@@ -5,10 +5,12 @@ import 'package:flutter/services.dart';
 enum ConnectStatus { none, connected, disconnected }
 
 class CiConnectivity {
+  CiConnectivity({this.timeCheck = 30});
+
   final MethodChannel _channel = const MethodChannel('ci_connectivity');
 
   /// time to verify connectivity
-  int timeCheck = 30;
+  int timeCheck;
 
   /// status of connection
   ConnectStatus status = ConnectStatus.none;
@@ -38,7 +40,7 @@ class CiConnectivity {
   Stream<bool> get onListenerStatusNetwork => _streamController.stream;
 
   void loopVerifyStatus() {
-    Timer.periodic(const Duration(seconds: 30), (timer) async {
+    Timer.periodic(Duration(seconds: timeCheck), (timer) async {
       await _getCheckConnection();
       if (status != _newStatus) {
         status = _newStatus;
